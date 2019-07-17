@@ -7,38 +7,35 @@ namespace WildLifePark.Models
     private string _animal;
     private int _age;
     private string _gender;
-
-
-    public Car(string animal, int age, string gender)
+    private int _count;
+    public WildLife(string animal, int age, string gender, int count)
     {
       _animal = animal;
       _age = age;
       _gender = gender;
+      _count = count;
     }
-    public string GetMakeModel()
+    public string GetAnimal()
     {
-      return _makeModel;
+      return _animal;
     }
-    public int GetPrice()
+    public int GetCount()
     {
-      return _price;
+      return _count;
+    }
+    public int GetAge()
+    {
+      return _age;
     }
 
-    public int GetMiles()
+    public string GetGender()
     {
-      return _miles;
+      return _gender;
     }
-    public bool WorthBuying(int maxPrice)
+    public bool AgeCheck(int maxAge)
     {
-      return (_price < maxPrice);
+      return (_age < maxAge);
     }
-    public void SetPrice(int newPrice)
-    {
-      _price = newPrice;
-    }
-    public static string MakeSound(string sound)
-        {
-            return "Our cars sound like " + sound;
-        }
   }
+
 }
