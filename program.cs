@@ -17,15 +17,30 @@ namespace WildLifePark
       int maxAge = int.Parse(stringAge);
 
       List<WildLife> Search = new List<WildLife>(0);
-
-      foreach (WildLife animals in Records)
-      {
-        if (animals.AgeCheck(maxAge))
-        {
-          Search.Add(animals);
-        }
+      Console.WriteLine("Would you like entry new animal details? ['Y' for yes, 'Enter' for no]");
+    string answer = Console.ReadLine();
+    if (answer == "Y" || answer == "y")
+    {
+        Console.WriteLine("Enter the Animal");
+        string animal = Console.ReadLine();
+        Console.WriteLine("Enter it's Age");
+        int age = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter it's Gender");
+        string gender = Console.ReadLine();
+        Console.WriteLine("Enter the count");
+        int count = int.Parse(Console.ReadLine());
+        WildLife newEntry= new WildLife(animal,age,gender,count);
+        Records.Add(newEntry);
       }
+    
 
+    foreach (WildLife animals in Records)
+    {
+      if (animals.AgeCheck(maxAge))
+      {
+        Search.Add(animals);
+      }
+    }
     foreach(WildLife animals in Search)
     {
       Console.WriteLine("----------------------");
